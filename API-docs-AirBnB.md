@@ -233,7 +233,7 @@ Returns all the spots.
 * Require Authentication: false
 * Request
   * Method: GET
-  * Route path: /listings
+  * Route path: /spots
   * Body: none
 
 * Successful Response
@@ -273,7 +273,7 @@ Returns all the spots owned (created) by the current user.
 * Require Authentication: true
 * Request
   * Method: GET
-  * Route path: /listings/:userId
+  * Route path: /spots/:userId
   * Body: none
 
 * Successful Response
@@ -313,7 +313,7 @@ Returns the details of a spot specified by its id.
 * Require Authentication: false
 * Request
   * Method: GET
-  * Route path: /listings/:listingId
+  * Route path: /spots/:listingId
   * Body: none
 
 * Successful Response
@@ -378,7 +378,7 @@ Creates and returns a new spot.
 * Require Authentication: true
 * Request
   * Method: POST
-  * Route path: /listings
+  * Route path: /spots
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -452,7 +452,7 @@ Create and return a new image for a spot specified by id.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: PUT
-  * Route path: /listings/:listingId
+  * Route path: /spots/:listingId
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -498,7 +498,7 @@ Updates and returns an existing spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: PATCH
-  * Route path: /listings/:listingId
+  * Route path: /spots/:listingId
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -584,7 +584,7 @@ Deletes an existing spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: DELETE
-  * Route path: /listings/:listingId
+  * Route path: /spots/:listingId
   * Body: none
 
 * Successful Response
@@ -676,7 +676,7 @@ Returns all the reviews that belong to a spot specified by id.
 * Require Authentication: false
 * Request
   * Method: GET
-  * Route path: /listings/:listingId/reviews
+  * Route path: /spots/:listingId/reviews
   * Body: none
 
 * Successful Response
@@ -731,7 +731,7 @@ Create and return a new review for a spot specified by id.
 * Require Authentication: true
 * Request
   * Method: POST
-  * Route path: /listings/:listingId/reviews
+  * Route path: /spots/:listingId/reviews
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -1013,7 +1013,7 @@ Return all the bookings for a spot specified by id.
 * Require Authentication: true
 * Request
   * Method: GET
-  * Route path: /listings/:listingId/bookings
+  * Route path: /spots/:listingId/bookings
   * Body: none
 
 * Successful Response: If you ARE NOT the owner of the spot.
@@ -1081,7 +1081,7 @@ Create and return a new booking from a spot specified by id.
 * Require proper authorization: Spot must NOT belong to the current user
 * Request
   * Method: POST
-  * Route path: /listings/:listingId/bookings
+  * Route path: /spots/:listingId/bookings
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -1307,7 +1307,7 @@ Delete an existing image for a Spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: DELETE
-  * Route path: /listings/:listingId/imgs/:imgId
+  * Route path: /spots/:listingId/imgs/:imgId
   * Body: none
 
 * Successful Response
@@ -1376,7 +1376,7 @@ Return spots filtered by query parameters.
 * Require Authentication: false
 * Request
   * Method: GET
-  * Route path: /listings
+  * Route path: /spots
   * Query Parameters
     * page: integer, minimum: 1, default: 1
     * size: integer, minimum: 1, maximum: 20, default: 20
