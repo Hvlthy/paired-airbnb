@@ -26,9 +26,11 @@ app.get('/', (req, res) => {
 const { Student, Classroom } = require('./db/models');
 
 app.get('/students', async (req, res, next) => {
+    
+    console.log(req.url);
 
     const students = await Student.findAll({
-        order: [['lastName', 'asc']]
+        order: [['lastName', 'ASC']]
     });
 
     res.json(students);
@@ -36,14 +38,10 @@ app.get('/students', async (req, res, next) => {
 
 app.get('/classrooms', async (req, res) => {
     const classrooms = await Classroom.findAll({
-        order: [['name', 'asc']]
+        order: [['name', 'asc']],
     });
 
     res.json(classrooms)
-})
-
-app.get('/supplies/category/:categoryName', async (req, res) => {
-    
 })
 
 // Custom error middleware (triggered via call to next(err)) - DO NOT MODIFY
