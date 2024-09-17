@@ -1,0 +1,2 @@
+npx dotenv sequelize db:migrate
+
