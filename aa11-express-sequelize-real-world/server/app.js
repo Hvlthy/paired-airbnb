@@ -23,27 +23,6 @@ app.get('/', (req, res) => {
     });
 });
 
-const { Student, Classroom } = require('./db/models');
-
-app.get('/students', async (req, res, next) => {
-    
-    console.log(req.url);
-
-    const students = await Student.findAll({
-        order: [['lastName', 'ASC']]
-    });
-
-    res.json(students);
-});
-
-app.get('/classrooms', async (req, res) => {
-    const classrooms = await Classroom.findAll({
-        order: [['name', 'asc']],
-    });
-
-    res.json(classrooms)
-})
-
 // Custom error middleware (triggered via call to next(err)) - DO NOT MODIFY
 app.use((err, req, res, next) => {
     console.error(err);
